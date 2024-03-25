@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mrcaddlr's Creations</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            text-align: center;
+        }
+
+        .button {
+            display: inline-block;
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 10px;
+            cursor: pointer;
+            position: relative;
+            transition: background-color 0.3s ease; /* Add transition effect */
+        }
+
+        .button:hover {
+            background-color: #0056b3; /* Change background color on hover */
+        }
+
+        .button:hover::after {
+            content: ""; 
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
+            border-radius: 5px;
+            font-size: 14px;
+            opacity: 0.9;
+            pointer-events: none;
+            z-index: 999;
+            transition: opacity 0.3s ease; /* Add transition effect */
+        }
+
+        .preview {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: none;
+            z-index: 999;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .preview img {
+            max-width: 300px;
+            max-height: 200px;
+            display: block;
+            margin: 0 auto;
+        }
+
+        .preview p {
+            margin-top: 10px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>mrcaddlr's Creations</h1>
+    </header>
+    <div class="container">
+        <a href="https://ez-clock.netlify.app/" class="button" onmouseover="showPreview('https://u.cubeupload.com/mrcaddlr/Screenshot20240325at.png', 'Ez Clock - a simple clock that adapts to YOUR timezone')" onmouseout="hidePreview()" data-preview="a simple clock">Ez Clock</a>
+        <a href="https://aigeneratedtycoon.netlify.app/" class="button" onmouseover="showPreview('https://u.cubeupload.com/mrcaddlr/6e9Screenshot20240325at.png', 'A tycoon made by ChatGPT')" onmouseout="hidePreview()" data-preview="Made by ChatGPT">AI Generated Tycoon</a>
+        <a href="link3.html" class="button" onmouseover="showPreview('website3_preview.jpg', 'Preview of Website 3')" onmouseout="hidePreview()" data-preview="a simple clock">Button 3</a>
+    </div>
+
+    <div id="preview" class="preview">
+        <img id="previewImage" src="" alt="">
+        <p id="previewText"></p>
+    </div>
+
+    <script>
+        function showPreview(imageSrc, text) {
+            var preview = document.getElementById("preview");
+            var previewImage = document.getElementById("previewImage");
+            var previewText = document.getElementById("previewText");
+
+            previewImage.src = imageSrc;
+            previewText.textContent = text;
+            preview.style.display = "block";
+        }
+
+        function hidePreview() {
+            var preview = document.getElementById("preview");
+            preview.style.display = "none";
+        }
+    </script>
+</body>
+</html>
