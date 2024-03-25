@@ -1,2 +1,2 @@
 # mrcaddlr-s-Creation
-a landing page for my creations
+a simple little landing page for my creations 🛠️
